@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.lang.reflect.Field;
 import java.util.LinkedList;
@@ -48,14 +50,15 @@ public class MainTest {
         List<Employee> list = Main.findDuplicates(employees);
         assertEquals(list.size(), 3);
         assertEquals(list.get(0).getFirstname(), "Dogancan");
+
     }
 
     @DisplayName("findUniques method doğru çalışıyor mu?")
     @Test
     public void testFindUniquesMethod() {
-        Map<Integer, Employee> map = Main.findUniques(employees);
-        assertEquals(map.size(), 4);
-        assertEquals(map.get(1).getFirstname(), "Dogancan");
+        Map<Integer, Employee> list = Main.findUniques(employees);
+        assertEquals(list.size(), 4);
+        assertEquals(list.get(0).getFirstname(),"Dogancan");
     }
 
     @DisplayName("removeDuplicates method doğru çalışıyor mu?")
@@ -64,7 +67,7 @@ public class MainTest {
         List<Employee> list = Main.removeDuplicates(employees);
         System.out.println(list);
         assertEquals(list.size(), 1);
-        assertEquals(list.get(0).getFirstname(), "Burak");
+        assertEquals(list.get(0).getFirstname(),"Burak");
     }
 
     @DisplayName("calculatedWord method doğru çalışıyor mu?")
